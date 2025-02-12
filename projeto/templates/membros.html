@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Membros{% endblock %}
+
+{% block content %}
+    <h1>Lista de Membros</h1>
+
+    <ul>
+        {% for membro in membros %}
+            <li>{{ membro["nome"] }} - {{ membro["email"] }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('perfil') }}">Voltar ao perfil</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+    <h1>Bem-vindo ao Membros em Foco</h1>
+
+    {% if usuario %}
+        <p>Olá, {{ usuario }}! <a href="{{ url_for('perfil') }}">Acesse seu perfil</a>.</p>
+    {% else %}
+        <p>Gerencie e visualize membros com facilidade!</p>
+        <p><a href="{{ url_for('cadastro') }}">Cadastre-se</a> ou <a href="{{ url_for('login') }}">faça login</a>.</p>
+    {% endif %}
+{% endblock %}
